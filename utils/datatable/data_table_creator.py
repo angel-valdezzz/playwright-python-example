@@ -1,5 +1,5 @@
 from dataclasses import dataclass, make_dataclass
-from utils.abstract_data_reader import AbstractDataReader
+from utils.datatable.abstract_data_reader import AbstractDataReader
 from utils.data_dir_content import DataDirContent
 
 class DataTableCreator:

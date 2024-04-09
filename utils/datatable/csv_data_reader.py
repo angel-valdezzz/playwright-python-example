@@ -1,5 +1,5 @@
 import csv
-from utils.abstract_data_reader import AbstractDataReader
+from utils.datatable.abstract_data_reader import AbstractDataReader
 
 class CSVDataReader(AbstractDataReader):
     """CSVDataReader class."""

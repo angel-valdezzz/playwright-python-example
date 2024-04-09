@@ -4,8 +4,8 @@ from keywords.login_keywords import LoginKeywords
 from keywords.create_new_account_keywords import CreateNewAccountKeywords
 from keywords.account_overview_keywords import AccountOverviewKeywords
 from keywords.transfer_funds_keywords import TransferFundsKeywords
-from utils.data_table_creator import DataTableCreator
-from utils.csv_data_reader import CSVDataReader
+from utils.datatable.data_table_creator import DataTableCreator
+from utils.datatable.csv_data_reader import CSVDataReader
 from utils.data_dir_content import DataDirContent
 
 @pytest.fixture
