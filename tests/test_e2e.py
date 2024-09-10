@@ -8,16 +8,23 @@ from utils.datatable.data_table_creator import DataTableCreator
 from utils.datatable.csv_data_reader import CSVDataReader
 from utils.data_dir_content import DataDirContent
 from dataclasses import dataclass
+from utils.reports.report_context_creator import ReportContextCreator
 
 @pytest.fixture
-def login(page: Page) -> None:
+def report_fixture(page: Page):
+    yield  ReportContextCreator
+    rpt_context = ReportContextCreator.instance()
+
+@pytest.fixture
+def login(page: Page, report_fixture_context) -> None:
     """Fixture to log in to the application."""
     login = LoginKeywords(page)
     login.login_in_to_the_application()
 
 @pytest.mark.parametrize("datatable", DataTableCreator.create_tables(CSVDataReader, DataDirContent("account.csv")))
-def test_open_new_account(datatable: dataclass, login, page: Page) -> None:
+def test_open_new_account(datatable: dataclass, report_fixture_context: ReportContextCreator, login, page: Page) -> None:
     """Test opening a new account in Parabank."""
+    report_fixture_context(dataclass.test_name)
     create_new_account = CreateNewAccountKeywords(page)
     create_new_account.create_new_account(datatable.account_type, datatable.account_reference)
 

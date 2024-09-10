@@ -1,4 +1,4 @@
-ID del Caso de Prueba, Descripción, Labels, Modulo de ejecución
+ID del Caso de Prueba," Descripción"," Labels"," Modulo de ejecución"
 TC001_NewAccountChecking,Crea una cuenta de tipo Checking,e2e,tests.e2e.account.open_new_account
 TC002_NewAccountSavings,Crea una cuenta de tipo Savings,e2e,tests.e2e.account.open_new_account
 TC003_NewAccountChecking_TransferFundsToNewAccount,Crea una cuenta de tipo Checking y transfiere fondos de una cuenta existente a la nueva cuenta,workflow,tests.workflows.account.transfer_funds
