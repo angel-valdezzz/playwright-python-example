@@ -5,7 +5,7 @@ from playwright.sync_api import expect
 class ParaBank:
     def __init__(self, page):
         self.page = page
-        self.username = 'qa' + uuid4().hex
+        self.username = 'qa' + uuid4().hex[:18]
         self.password = 'DemoPass42!'
 
     def home(self):
