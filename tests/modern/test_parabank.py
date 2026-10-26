@@ -9,7 +9,7 @@ def test_logout_login(page):
     bank.register()
     page.get_by_role('link', name='Log Out', exact=True).click()
     bank.login()
-    expect(page.locator('#rightPanel h1')).to_have_text('Accounts Overview')
+    expect(page.locator('#rightPanel h1:visible')).to_have_text('Accounts Overview')
 
 def test_required_fields(page):
     bank = ParaBank(page)
